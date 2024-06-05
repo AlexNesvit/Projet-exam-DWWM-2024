@@ -1,6 +1,22 @@
 twig:
+    default_path: '%kernel.project_dir%/templates'
     form_themes: ['bootstrap_5_layout.html.twig']
 
+    globals:
+        description: 'formation'
+        name: 'Alex NESVIT'
+        adress: 'La Ciotat, 13600'
+        email: 'alex.nesvit2000@gmail.com'
+        company: 'Le Club'
+        telephone: '06 06 06 06 06'
+        siret: '1234567890123'
+        ape: '1234567Z'
+        price: '500'
+        currency: '€'
+        tva: 'non appliquée'
+        quantity: '1'
+        host: 'localhost:8000'
+        domain: 'localhost'
 when@test:
     twig:
         strict_variables: true
