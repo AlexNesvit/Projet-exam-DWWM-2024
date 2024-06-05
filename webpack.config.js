@@ -22,6 +22,9 @@ Encore
      */
     .addEntry('app', './assets/app.js')
 
+    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
+    .enableStimulusBridge('./assets/controllers.json')
+
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
@@ -66,11 +69,15 @@ Encore
     // requires WebpackEncoreBundle 1.4 or higher
     //.enableIntegrityHashes(Encore.isProduction())
     // Добавляем файл `app.sass` как основной файл стилей
-    .addStyleEntry('app', './assets/styles/app.sass')
+    .addStyleEntry('app', 'assets/styles/app.sass')
     
     // Включаем обработку Sass файлов
-    .enableSassLoader()
-
+    .enableSassLoader({
+        // Если используешь синтаксис SASS вместо SCSS, добавь этот параметр
+        sassOptions: {
+            indentedSyntax: true
+        }
+    })
     // Другие полезные опции
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
