@@ -16,8 +16,10 @@
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
+        {{ form_row(registrationForm.agreeTerms, {
+            label: "Conditions d'utilisation"
+        }) }}
+        <a href="{{ path('app_rgpd')}}">RGPD</a>
         <button type="submit" class="btn">S'enregistrer</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
