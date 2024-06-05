@@ -1,6 +1,6 @@
 # 🟣 E-commerce Exam DWWM-2024 🟣 
 
-  <img src="e-commerce/images/y7tj4lcc.bmp" alt="Logo" width="100" height="100">
+  <img src="public/images/y7tj4lcc.bmp" alt="Logo" width="100" height="100">
 
 
 # ✅ E-commerce Exam DWWM 2024 ✅  
