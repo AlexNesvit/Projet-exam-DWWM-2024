@@ -7,50 +7,52 @@
 {% endblock %}
 
 {% block body %}
+<section>
     {% for flash_success in app.flashes('success') %}
-        <div class="alert alert-success" role="alert">{{ flash_success }}</div>
+            <div class="alert alert-success" role="alert">{{ flash_success }}</div>
     {% endfor %}
-<form method="post">
+    <form method="post">
     {% if error %}
-        <div class="alert alert-success">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="alert alert-success">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
     {% if app.user %}
-        <div class="mb-3">
+            <div class="mb-3">
             Vous êtes connectés en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">LogoutSe déconnectér</a>
-        </div>
+            </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Connectez vous svp!</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <br>
-    <label id="passwordLabel" for="inputPassword">Password
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-    <div class="password-icon">
-    <span class="material-symbols-outlined eye-off">visibility_off</span>
-    <span class="material-symbols-outlined eye-on">visibility</span>
-    </div>
-    </label>
-    <br>
-    <br>
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Remember me
+        <h1 class="h3 mb-3 font-weight-normal">Connectez vous svp!</h1>
+        <label for="inputEmail">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <br>
+        <label id="passwordLabel" for="inputPassword">Password
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        <div class="password-icon">
+        <span class="material-symbols-outlined eye-off">visibility_off</span>
+        <span class="material-symbols-outlined eye-on">visibility</span>
+        </div>
         </label>
-    </div>
+        <br>
+        <br>
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+        >
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Se connecter
-    </button>
-    <br>
-    <br>
-    <div class="mb-3 text">Vous n'êtes pas enregistré ? 
-    <a href="{{ path('app_register')}}">Enregistrez-vous en cliquant ici</a>
-    </div>
-</form>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary" type="submit">
+            Se connecter
+        </button>
+        <br>
+        <br>
+        <div class="mb-3 text">Vous n'êtes pas enregistré ? 
+        <a href="{{ path('app_register')}}">Enregistrez-vous en cliquant ici</a>
+        </div>
+    </form>
+</section>
 {% endblock %}
