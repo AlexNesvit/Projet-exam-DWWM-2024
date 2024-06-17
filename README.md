@@ -161,3 +161,12 @@ Je tiens à exprimer ma sincère gratitude envers ..., dont la disponibilité co
 <div align="center"><a href="https://www.buymeacoffee.com/alexnesvit"><img alt="Coffee" src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" /></a></div>
 </p>
 </div>
+
+
+
+`
+composer remove symfony/ux-turbo symfony/asset-mapper symfony/stimulus-bundle
+composer require symfony/webpack-encore-bundle symfony/ux-turbo symfony/stimulus-bundle
+npm install
+npm run dev`
+
